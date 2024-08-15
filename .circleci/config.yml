@@ -16,7 +16,7 @@ jobs:
           command: pip install -r requirements.txt
       - run:
           name: Run tests
-          command: coverage run -m unittest && coverage report 
+          command: coverage run -m unittest && coverage xml && coverage report
       - run:
           name: Upload CodeClimate coverage report
           command: |
