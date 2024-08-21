@@ -13,5 +13,17 @@ class Board:
         self.positions[0][7] = Rook('BLACK')
         self.positions[7][0] = Rook('WHITE')
 
+
+    def __str__(self):
+        board_str = ''
+        for row in self.positions:
+            for col in row:
+                if col is not None:
+                    board_str += col.color
+                else:
+                    board_str += ''
+            board_str += '\n'
+
+            
     def get_piece(self, row, col):
         return self.board.__positions__[row][col]

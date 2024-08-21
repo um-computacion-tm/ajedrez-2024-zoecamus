@@ -2,11 +2,13 @@ from chess import Chess
 
 def main():
      chess = Chess()
-     while True:
-         play(Chess)
+     while chess.is_playing():
+         play(chess)
 
 def play(Chess):
      try:
+         print(Chess.show_board())
+         print('Turn: ' + Chess.turn)
          from_row =  int(input('From row: '))
          from_col =  int(input('From column: '))
          to_row =  int(input('To row: '))
