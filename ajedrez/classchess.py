@@ -9,9 +9,7 @@ class Chess:
 
     def move(self, 
         from_row, 
-        from_col, 
-        to_row, 
-        to_col):
+        from_col, to_row, to_col):
         
         piece = self.board.get_piece(from_row, from_col)
         self.change_turn()
