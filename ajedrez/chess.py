@@ -20,5 +20,19 @@ def play(Chess):
          print('Invalid error')
 
                 
+@property
+def turn(self):
+        return self.__turn__
+
+def show_board(self):
+        return str(self.__board__)
+
+def change_turn(self):
+        if self.__turn__ == "WHITE":
+            self.__turn__ = "BLACK"
+        else:
+             self.__turn__ = "WHITE"
+    
+    
 if __name__ == '__main__':
     main()
