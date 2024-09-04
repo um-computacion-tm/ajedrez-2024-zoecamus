@@ -58,8 +58,8 @@ class TestBoard(unittest.TestCase):
 class TestRook(unittest.TestCase):
 
     def test_str(self):
-        board = Board()
-        rook = Rook("WHITE", board)
+        
+        rook = Rook("WHITE")
         self.assertEqual(
             str(rook),
             "♜",
@@ -104,5 +104,33 @@ class TestRook(unittest.TestCase):
             possibles,
             [(5, 1), (6, 1)]
         )
+
+class TestPawn(unittest.TestCase):
+    
+    def test_pawn_move_forward(self):
+        board = Board()
+        pawn = Pawn("WHITE")
+        board.set_piece(6, 4, pawn)  # Colocamos un peón blanco en la posición inicial
+        expected_moves = [(5, 4), (4, 4)]  # Puede moverse 1 o 2 casillas hacia adelante
+        self.assertEqual(pawn.get_possible_moves((6, 4), board), expected_moves)
+
+    def test_pawn_move_capture(self):
+        board = Board()
+        pawn = Pawn("WHITE")
+        board.set_piece(4, 4, pawn)  # Colocamos un peón blanco en una posición intermedia
+        board.set_piece(3, 3, Pawn("BLACK"))  # Colocamos un peón negro en diagonal izquierda
+        board.set_piece(3, 5, Pawn("BLACK"))  # Colocamos un peón negro en diagonal derecha
+        expected_moves = [(3, 4), (3, 3), (3, 5)]  # Puede avanzar o capturar en cualquiera de las diagonales
+        self.assertEqual(pawn.get_possible_moves((4, 4), board), expected_moves)
+
+    def test_pawn_blocked(self):
+        board = Board()
+        pawn = Pawn("WHITE")
+        board.set_piece(4, 4, pawn)  # Colocamos un peón blanco en una posición intermedia
+        board.set_piece(3, 4, Pawn("BLACK"))  # Colocamos un peón negro justo adelante para bloquearlo
+        expected_moves = []  # No debería poder moverse
+        self.assertEqual(pawn.get_possible_moves((4, 4), board), expected_moves)
+
+
 if __name__ == '__main__':
     unittest.main()
