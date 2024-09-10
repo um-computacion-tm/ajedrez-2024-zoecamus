@@ -1,7 +1,7 @@
 import unittest
 from classboard import Board
-from pieces import Pawn
-from rook import Pawn
+from movepawn import Pawn
+from classpieces import Pawn
 
 class TestPawn(unittest.TestCase):
     
