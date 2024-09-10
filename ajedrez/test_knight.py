@@ -1,6 +1,6 @@
 import unittest
-from classboard import Board
-from moveknight import Knight
+from .classboard import Board
+from .moveknight import Knight
 
 class TestKnight(unittest.TestCase):
     

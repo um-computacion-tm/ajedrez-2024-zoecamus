@@ -1,6 +1,6 @@
 import unittest
-from classboard import Board
-from moverook import Rook
+from .classboard import Board
+from .moverook import Rook
 from ajedrez.classpieces import Rook
 
 

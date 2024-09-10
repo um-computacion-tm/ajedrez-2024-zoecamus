@@ -1,4 +1,4 @@
-from classpieces import Piece
+from .classpieces import Piece
 
 class Knight(Piece):
     def __init__(self, color='♞'):

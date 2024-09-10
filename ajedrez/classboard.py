@@ -1,11 +1,10 @@
-from classpieces import Rook, Knight, Pawn, Bishop, King, Queen
+from .classpieces import Rook, Knight, Pawn, Bishop, King, Queen
 
 class Board:
     def __init__(self, size=8):
          self.__size__ = size
          self.__grid__ = [[None for _ in range(size)] for _ in range(size)]
          self._setup_board()
-
 
     def _setup_board(self):
         self.__positions__ = []
@@ -14,14 +13,14 @@ class Board:
             for _ in range(8):
                 col.append(None)
             self.__positions__.append(col)
-        self.positions[7][0] = Rook ('♖')
-        self.positions[0][0] = Rook ('♜')
-        self.positions[7][7] = Rook ('♖')
-        self.positions[0][7] = Rook ('♜')
-        self.positions[7][1] = Knight ('♘')
-        self.positions[7][6] = Knight ('♘')
-        self.positions[0][1] = Knight ('♞')
-        self.positions[0][6] = Knight ('♞')
+        self.__positions__[7][0] = Rook ('♖')
+        self.__positions__[0][0] = Rook ('♜')
+        self.__positions__[7][7] = Rook ('♖')
+        self.__positions__[0][7] = Rook ('♜')
+        self.__positions__[7][1] = Knight ('♘')
+        self.__positions__[7][6] = Knight ('♘')
+        self.__positions__[0][1] = Knight ('♞')
+        self.__positions__[0][6] = Knight ('♞')
 
         for i in range(8):
             self.positions[6][i] = Pawn('WHITE')

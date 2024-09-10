@@ -1,9 +1,7 @@
 import unittest
-from classboard import Board
-from moverook import Rook
-from classpieces import Pawn
-from classpieces import Rook
-
+from .classboard import Board
+from .moverook import Rook
+from .classpieces import Pawn, Rook
 
 class TestRook(unittest.TestCase):
 

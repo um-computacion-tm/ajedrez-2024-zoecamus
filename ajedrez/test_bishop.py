@@ -1,6 +1,6 @@
 import unittest
-from classboard import Board
-from movebishop import Bishop
+from ajedrez.classboard import Board
+from ajedrez.movebishop import Bishop
 
 class TestBishop(unittest.TestCase):
     
