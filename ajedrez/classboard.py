@@ -23,17 +23,17 @@ class Board:
         self.__positions__[0][6] = Knight ('♞')
 
         for i in range(8):
-            self.positions[6][i] = Pawn('WHITE')
-            self.positions[1][i] = Pawn('BLACK')
+            self.__positions__[6][i] = Pawn('♟')
+            self.__positions__[1][i] = Pawn('♙')
 
-        self.positions[0][2] = Bishop ('♝')
-        self.positions[0][5] = Bishop ('♝')
-        self.positions[7][2] = Bishop ('♗')
-        self.positions[7][5] = Bishop ('♗')        
-        self.positions[7][4] = King ('♕')
-        self.positions[7][3] = Queen ('♔')
-        self.positions[0][4] = King ('♛')
-        self.positions[0][3] = Queen ('♚')      
+        self.__positions__[0][2] = Bishop ('♝')
+        self.__positions__[0][5] = Bishop ('♝')
+        self.__positions__[7][2] = Bishop ('♗')
+        self.__positions__[7][5] = Bishop ('♗')        
+        self.__positions__[7][4] = King ('♕')
+        self.__positions__[7][3] = Queen ('♔')
+        self.__positions__[0][4] = King ('♛')
+        self.__positions__[0][3] = Queen ('♚')      
 
     def __str__(self):
         board_str = ""
@@ -49,3 +49,6 @@ class Board:
 
     def get_piece(self, row, col):
         return self.__positions__[row][col]
+    
+    def set_piece(self, row, col, piece):
+        self.__positions__[row][col] = piece
