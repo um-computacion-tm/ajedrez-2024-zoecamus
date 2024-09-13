@@ -33,7 +33,9 @@ class Board:
         self.__positions__[7][4] = King ('♕')
         self.__positions__[7][3] = Queen ('♔')
         self.__positions__[0][4] = King ('♛')
-        self.__positions__[0][3] = Queen ('♚')      
+        self.__positions__[0][3] = Queen ('♚')     
+
+        pass 
 
     def __str__(self):
         board_str = ""
@@ -48,7 +50,20 @@ class Board:
         return board_str.strip()
 
     def get_piece(self, row, col):
-        return self.__positions__[row][col]
+        if 0 <= row < self.__size__ and 0 <= col < self.__size__:
+            return self.__positions__[row][col]
+        else:
+            return None
+            
     
     def set_piece(self, row, col, piece):
-        self.__positions__[row][col] = piece
+        if 0 <= row < self.__size__ and 0 <= col < self.__size__:
+            self.__positions__[row][col] = piece
+
+    def get_empty_cells(self):
+        empty_cells = []
+        for row in range(self.__size__):
+            for col in range(self.__size__):
+                if self.__positions__[row][col] is None:
+                    empty_cells.append((row, col))
+        return empty_cells
