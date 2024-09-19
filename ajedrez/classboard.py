@@ -38,16 +38,16 @@ class Board:
         pass 
 
     def __str__(self):
-        board_str = ""
-        for row in self.__positions__:
-            row_str = ""
-            for piece in row:
-                if piece is None:
-                    row_str += "  "
-                else:
-                    row_str += str(piece) + " "
-            board_str += row_str.strip() + "\n"
-        return board_str.strip()
+     board_str = ""
+     for row in self.__positions__:
+        row_str = ""
+        for piece in row:
+            if piece is None:
+                row_str += " . " 
+            else:
+                row_str += f" {str(piece)} "
+        board_str += row_str.strip() + "\n"
+     return board_str.strip()
 
     def get_piece(self, row, col):
         if 0 <= row < self.__size__ and 0 <= col < self.__size__:
