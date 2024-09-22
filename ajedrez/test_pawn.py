@@ -17,7 +17,16 @@ class TestPawn(unittest.TestCase):
         pawn = Pawn("WHITE")
         board.set_piece(4, 4, pawn)       
         board.set_piece(3, 3, Pawn("BLACK"))     
-        board.set_piece(3, 5, Pawn("BLACK"))  
+        board.set_piece(3, 5, Pawn("BLACK")) 
+    
+    def test_pawn_blocked(self):
+        board = Board()
+        pawn = Pawn("WHITE")
+        board.set_piece(4, 4, pawn) 
+        board.set_piece(3, 4, Pawn("BLACK"))  
+        expected_moves = []  
+        self.assertEqual(pawn.get_possible_moves((4, 4), board), expected_moves)
+    
 
 if __name__ == '__main__':
     unittest.main()
