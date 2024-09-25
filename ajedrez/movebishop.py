@@ -1,13 +1,6 @@
 from .classpieces import Piece
 
 class Bishop(Piece):
-    def __init__(self, color, board=None):
-        super().__init__(color, board)
-        self.symbol = '♝' if color == 'WHITE' else '♗'
-
-    def __str__(self):
-        return self.symbol
-
     def get_possible_moves(self, position, board):
         row, col = position
         possible_moves = []
@@ -20,6 +13,7 @@ class Bishop(Piece):
                 break
             else:
                 break
+
         for i in range(1, min(row, 7 - col) + 1):
             if self.board.positions[row - i][col + i] is None:
                 possible_moves.append((row - i, col + i))
