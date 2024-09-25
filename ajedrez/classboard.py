@@ -67,3 +67,4 @@ class Board:
                 if self.__positions__[row][col] is None:
                     empty_cells.append((row, col))
         return empty_cells
+    

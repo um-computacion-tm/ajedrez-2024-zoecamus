@@ -29,16 +29,15 @@ class TestRook(unittest.TestCase):
         expected = [(3, 1), (2, 1), (1, 1), (0, 1)]
         self.assertEqual(possibles, expected)
         
-   
+         
     def test_move_vertical_desc_with_own_piece(self):
         board = Board()
-        board.set_piece(6, 1, Rook)
+        board.set_piece(6, 1, Rook("WHITE"))  # Colocamos una torre propia en el camino
         rook = Rook("WHITE")
         board.set_piece(4, 1, rook)
         possibles = rook.get_possible_moves((4, 1), board)
-        expected = [(5, 1)]
+        expected = [(5, 1)]  # Debería detenerse antes de la pieza propia
         self.assertEqual(possibles, expected)
-
 
     def test_move_vertical_desc_with_not_own_piece(self):
         board = Board()
