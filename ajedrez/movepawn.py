@@ -1,6 +1,6 @@
 from .classpieces import Pawn
 
-class MovePawn(Pawn):
+class Pawn(Pawn):
     def get_possible_moves(self, position, board):
         possible_moves = []
         col, row = position
