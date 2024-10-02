@@ -13,7 +13,9 @@ class Knight(Knight):
         ]
 
         for move in moves:
-            if board.is_empty_or_enemy(move[0], move[1], self.get_color()):
-                possible_moves.append(move)
+            r, c = move
+            if 0 <= r < 8 and 0 <= c < 8:  # Verifica que la posición esté dentro del tablero
+                if board.is_empty_or_enemy(r, c, self.get_color()):
+                    possible_moves.append(move)
 
         return possible_moves
